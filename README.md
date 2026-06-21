@@ -6,9 +6,10 @@ A 3D medieval browser game built with [Three.js](https://threejs.org/). You are 
 knight on the battlefield: survive the waves, choose upgrades, ride a horse, fire a
 catapult and recruit a caravan of allied knights.
 
-**This game was created entirely by Justus Dütscher (10 years old) — all by himself.** 🎉
-This repository turns his prototype into a clean, structured, multilingual project,
-without changing the game he made.
+**The game was created entirely by Justus Dütscher (10 years old) — all by himself.** 🎉
+His dad put the prototype into this repository and used **AI (Claude / Claude Code)**
+to tidy it up — structure, modularization and German/English (i18n) support.
+**The gameplay itself is unchanged — it is Justus's game.**
 
 <p align="center">
   <a href="https://jumavegames.itch.io/catapult-and-blade">
@@ -172,9 +173,10 @@ Ein 3D-Mittelalter-Browserspiel mit [Three.js](https://threejs.org/). Du bist ei
 Ritter auf dem Schlachtfeld: Überstehe die Wellen, wähle Upgrades, reite ein Pferd,
 feuere ein Katapult ab und sammle eine Karawane verbündeter Ritter ein.
 
-**Dieses Spiel wurde komplett von Justus Dütscher (10 Jahre) ganz alleine erstellt.** 🎉
-Dieses Repository macht aus seinem Prototyp ein sauberes, strukturiertes und
-mehrsprachiges Projekt — ohne das Spiel selbst zu verändern.
+**Das Spiel wurde komplett von Justus Dütscher (10 Jahre) ganz alleine erstellt.** 🎉
+Sein Papa hat den Prototyp in dieses Repository gepackt und mit **KI (Claude / Claude Code)**
+aufräumen lassen — Struktur, Modularisierung, Deutsch/Englisch (i18n).
+**Das Spiel selbst ist unverändert — es ist Justus' Spiel.**
 
 ## ✨ Funktionen
 
