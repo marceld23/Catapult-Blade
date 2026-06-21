@@ -9,6 +9,7 @@
     "build": "node tools/build-itch.mjs",
     "shots": "node tools/screenshots.mjs",
     "cover": "node tools/make-cover.mjs",
+    "social": "node tools/make-social.mjs",
     "test": "node tools/i18n-runtime-test.mjs"
   },
   "keywords": [
