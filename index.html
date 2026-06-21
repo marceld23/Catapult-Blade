@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catapult &amp; Blade</title>
+  <link rel="stylesheet" href="./src/css/styles.css" />
+</head>
+<body>
+
+  <div id="splashScreen" aria-label="JuJu Games Intro">
+    <div class="splashSpark"></div>
+    <div class="splashSpark"></div>
+    <div class="splashSpark"></div>
+    <div class="splashSpark"></div>
+    <div id="splashInner">
+      <div id="splashEmblem">JJ</div>
+      <div id="splashLogo">JuJu Games</div>
+      <div id="splashCopyright">(c) 2026 by Justus Dütscher</div>
+    </div>
+  </div>
+
+  <div id="touchControls">
+    <div id="touchModeBadge" data-i18n="touch.modeBadge">Tablet-Modus</div>
+    <div id="lookArea"></div>
+    <div id="movePad"><div id="moveStick"></div></div>
+    <div id="touchButtons">
+      <div class="touchBtn primary" data-touch="attack" data-i18n="touch.attack">Angriff</div>
+      <div class="touchBtn primary" data-touch="block" data-i18n-html="touch.block">Schild<br>halten</div>
+      <div id="touchActionBtn" class="touchBtn secondary" data-touch="interact" data-i18n="touch.action">Aktion</div>
+      <div id="touchSpecialBtn" class="touchBtn secondary" data-touch="special" data-i18n="touch.special">Spezial</div>
+      <div class="touchBtn secondary" data-touch="potion" data-i18n="touch.potion">Trank</div>
+      <div id="touchWeaponBtn" class="touchBtn mini" data-touch="weapon" data-i18n="touch.weapon">Waffe</div>
+      <div class="touchBtn mini" data-touch="pause" data-i18n="touch.pause">Pause</div>
+    </div>
+  </div>
+
+  <div id="menu">
+    <div id="menuBox">
+      <h1 data-i18n="menu.title">KATAPULT &amp; KLINGE</h1>
+      <div id="versionTag" class="versionTag">v0.58</div>
+      <div id="subtitle" data-i18n="menu.subtitle">Ein Ritter-Schlachtfeld in 3D</div>
+
+      <div id="langSelect">
+        <span id="langLabel" data-i18n="menu.language">Sprache</span>
+        <button class="langButton" data-lang="de" type="button">DE</button>
+        <button class="langButton" data-lang="en" type="button">EN</button>
+      </div>
+
+      <p data-i18n="menu.intro">
+        Du bist ein Ritter auf einem Schlachtfeld. Du startest zu Fuß. Nach jeder geschafften Welle wählst du eines von zwei Upgrades.
+      </p>
+
+      <div id="pcControlsHelp" class="controls controlHelpBlock">
+        <div data-i18n-html="controlsPc.line1"><b>WASD</b>: laufen / reiten</div>
+        <div data-i18n-html="controlsPc.line2"><b>Maus</b>: Blickrichtung drehen</div>
+        <div data-i18n-html="controlsPc.line3"><b>W</b>: in Blickrichtung laufen</div>
+        <div data-i18n-html="controlsPc.line4"><b>A / D</b>: seitlich laufen, Figur dreht zur Laufrichtung</div>
+        <div data-i18n-html="controlsPc.line5"><b>Linksklick / Leertaste</b>: aktive Waffe benutzen</div>
+        <div data-i18n-html="controlsPc.line6"><b>Rechtsklick</b>: Schildblock</div>
+        <div data-i18n-html="controlsPc.line7"><b>E</b>: Stein aufnehmen / Katapult laden</div>
+        <div data-i18n-html="controlsPc.line8"><b>F</b>: Katapult abfeuern</div>
+        <div data-i18n-html="controlsPc.line9"><b>Q</b>: Schwert/Bogen wechseln ab Welle 4</div>
+        <div data-i18n-html="controlsPc.line10"><b>R</b>: Pferd besteigen / absteigen</div>
+        <div data-i18n-html="controlsPc.line11"><b>H</b>: Heiltrank benutzen</div>
+        <div data-i18n-html="controlsPc.line12"><b>Shift</b>: Sprint / Galopp</div>
+      </div>
+
+      <div id="tabletControlsHelp" class="controls controlHelpBlock">
+        <div data-i18n-html="controlsTablet.line1"><b>Linker Joystick</b>: laufen / Richtung steuern</div>
+        <div data-i18n-html="controlsTablet.line2"><b>Rechte Bildschirmhälfte</b>: Blickrichtung drehen</div>
+        <div data-i18n-html="controlsTablet.line3"><b>Angriff</b>: Schwert oder Bogen benutzen</div>
+        <div data-i18n-html="controlsTablet.line4"><b>Schild</b>: blocken, solange die Schildleiste hält</div>
+        <div data-i18n-html="controlsTablet.line5"><b>Joystick weit ziehen</b>: automatisch sprinten / galoppieren</div>
+        <div data-i18n-html="controlsTablet.line6"><b>Aktion</b>: Stein aufnehmen oder Katapult laden</div>
+        <div data-i18n-html="controlsTablet.line7"><b>Spezial</b>: Pferd benutzen oder Katapult abfeuern</div>
+        <div data-i18n-html="controlsTablet.line8"><b>Trank</b>: Heiltrank benutzen</div>
+        <div data-i18n-html="controlsTablet.line9"><b>Waffe</b>: erscheint erst sinnvoll, wenn der Bogen freigeschaltet ist</div>
+      </div>
+
+      <p class="small" data-i18n="menu.note">
+        Nicht brutal: Treffer werden durch Funken, Staubwolken und Rüstungsklirren dargestellt.
+      </p>
+
+      <div id="modeSelect">
+        <div id="modeEasy" class="modeButton selected" data-i18n="mode.easy">Classic Easy</div>
+        <div id="modeHardcore" class="modeButton" data-i18n="mode.hardcore">Hardcore</div>
+        <div id="modeCaravan" class="modeButton" data-i18n="mode.caravan">Stadtkarawane</div>
+      </div>
+      <div id="modeInfo" data-i18n="mode.info.easy">
+        Classic Easy: normale Wellen ohne Lagergrenze und ohne Pflicht-König.
+      </div>
+
+      <div id="controlSelect">
+        <div id="controlAuto" class="controlButton selected" data-i18n="control.auto">Steuerung: Auto</div>
+        <div id="controlPC" class="controlButton" data-i18n="control.pc">PC</div>
+        <div id="controlTablet" class="controlButton" data-i18n="control.tablet">Tablet/Test</div>
+      </div>
+      <div id="detectedControlBadge"></div>
+      <div id="controlInfo" data-i18n="control.info.default">
+        Auto: Erkennt Tablet/Touch meistens zuverlässig. PC/Tablet-Test bleibt als Sicherheitsauswahl sichtbar.
+      </div>
+
+      <div id="heraldryBox">
+        <div><b data-i18n="crest.heading">Dein Wappen</b></div>
+        <label><span data-i18n="crest.background">Hintergrundfarbe</span> <input id="crestColor" type="color" value="#2f73ff"></label>
+        <label><span data-i18n="crest.symbol">Symbol</span>
+          <select id="crestSymbol">
+            <option value="cross" data-i18n="crest.cross">Kreuz</option>
+            <option value="diamond" data-i18n="crest.diamond">Diamant</option>
+            <option value="star" data-i18n="crest.star">Stern</option>
+            <option value="moon" data-i18n="crest.moon">Mond</option>
+            <option value="shield" data-i18n="crest.shield">Schild</option>
+          </select>
+        </label>
+        <span id="crestPreview">✚</span>
+      </div>
+
+      <button id="startButton" data-i18n="menu.start">Spiel starten</button>
+      <p class="small" data-i18n="menu.cdnNote">Läuft komplett im Browser. Three.js ist enthalten – kein Internet nötig.</p>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div id="topLeft" class="panel">
+      <div data-i18n="hud.health">Lebenspunkte</div>
+      <div class="bar"><div id="healthFill" class="fill"></div></div>
+      <div data-i18n="hud.guard">Schildhaltung</div>
+      <div class="bar"><div id="guardFill" class="fill"></div></div>
+      <div data-i18n="hud.stamina">Ausdauer</div>
+      <div class="bar"><div id="staminaFill" class="fill"></div></div>
+    </div>
+
+    <div id="topRight" class="panel">
+      <div id="scoreText"></div>
+      <div id="waveText"></div>
+      <div id="enemyText"></div>
+      <div id="highText"></div>
+    </div>
+
+    <div id="bottomLeft" class="panel">
+      <div id="statusText"></div>
+      <div id="stoneText"></div>
+      <div id="catapultText"></div>
+      <div id="bowText"></div>
+      <div id="potionText"></div>
+      <div id="rewardText"></div>
+    </div>
+
+    <div id="bottomRight" class="panel">
+      <div id="objectiveText"></div>
+      <div class="small" data-i18n="hud.tip">
+        Tipp: Das Katapult ist stark gegen Gruppen und schwere rote Ritter.
+      </div>
+    </div>
+  </div>
+
+  <div id="hint"></div>
+  <div id="message"></div>
+  <div id="damageFlash"></div>
+
+  <div id="flowOverlay" aria-modal="true" role="dialog">
+    <div id="flowBox">
+      <div id="flowEyebrow" data-i18n="flow.ready">Bereit?</div>
+      <div id="flowTitle" data-i18n="flow.start">Es geht los!</div>
+      <div id="flowText" data-i18n="flow.startText">Klicke auf Weiter, um zu starten.</div>
+      <button id="flowButton" type="button" data-i18n="flow.continue">Weiter</button>
+    </div>
+  </div>
+
+  <div id="upgradeOverlay">
+    <div id="upgradeBox">
+      <div id="upgradeTitle" data-i18n="upgrade.panelTitle">Welle geschafft</div>
+      <div id="upgradeSummary" data-i18n="upgrade.panelSummary">Wähle eine Verbesserung.</div>
+      <div id="upgradeChoices">
+        <button id="upgradeChoiceA" class="upgradeChoice" type="button"></button>
+        <button id="upgradeChoiceB" class="upgradeChoice" type="button"></button>
+      </div>
+    </div>
+  </div>
+  <div id="crosshair"></div>
+
+  <!-- Splash is a classic (non-module) script on purpose: it must always run and
+       be dismissable, even when the page is opened from file:// where ES modules
+       are blocked. It has no imports/exports. -->
+  <script src="./src/splash.js"></script>
+  <script type="module" src="./src/game/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build / cache
+dist/
+.cache/
+*.log
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local env
+.env
+.env.local
+
+# Windows roaming app data (do not commit user/app data)
+%APPDATA%
+%APPDATA%/
+AppData/
+.butler/
