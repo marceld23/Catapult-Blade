@@ -7,7 +7,6 @@
     "start": "node tools/serve.mjs",
     "dev": "node tools/serve.mjs",
     "build": "node tools/build-itch.mjs",
-    "publish": "node tools/publish-itch.mjs",
     "shots": "node tools/screenshots.mjs",
     "cover": "node tools/make-cover.mjs",
     "test": "node tools/i18n-runtime-test.mjs"

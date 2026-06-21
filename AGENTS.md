@@ -65,7 +65,7 @@ A WebGL-capable browser is required; headless environments may not render the 3D
   source. The script is kept only so the derivation is reproducible/auditable.
 - `serve.mjs` — `npm start`, a dependency-free static server on port 8000.
 - `build-itch.mjs` — `npm run build`, stages `index.html` + `src/` and zips them so
-  `index.html` is at the zip root (`dist/catapult-blade-v<version>-itch.zip`) for itch.io.
+  `index.html` is at the zip root (`dist/catapult-blade-v<version>.zip`) for any static host.
 - `screenshots.mjs` — `npm run shots`, uses Playwright's bundled Chromium (has WebGL,
   not bound by managed system-Chrome policies) to capture menu + in-game shots in
   DE/EN into `screenshots/`.

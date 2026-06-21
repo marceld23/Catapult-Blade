@@ -1,10 +1,9 @@
-// Build an itch.io-ready zip of the game.
+// Bundle the static game into a zip you can drop on any static web host.
 //
-// itch.io serves HTML5 games as static files over HTTPS (no Node, no server of
-// your own). It expects a zip whose ROOT contains index.html. This script stages
-// only the files the game needs and zips them so index.html sits at the zip root.
+// The game is plain static files; this stages only what it needs and zips them so
+// index.html sits at the ZIP root (ready to serve from anywhere).
 //
-//   node tools/build-itch.mjs      ->  dist/catapult-blade-v<version>-itch.zip
+//   node tools/build-itch.mjs      ->  dist/catapult-blade-v<version>.zip
 //
 // Cross-platform: uses the `zip` CLI when present, otherwise PowerShell
 // Compress-Archive on Windows.
@@ -15,9 +14,9 @@ import { join } from 'node:path';
 
 const ROOT = fileURLToPath(new URL('..', import.meta.url));
 const DIST = join(ROOT, 'dist');
-const STAGE = join(DIST, 'itch');
+const STAGE = join(DIST, 'bundle');
 const VERSION = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8')).version;
-const ZIP = join(DIST, `catapult-blade-v${VERSION}-itch.zip`);
+const ZIP = join(DIST, `catapult-blade-v${VERSION}.zip`);
 
 // Files / folders the running game actually needs.
 const INCLUDE = ['index.html', 'src'];
@@ -46,5 +45,4 @@ try {
 }
 
 console.log('\nDone -> ' + ZIP);
-console.log('Upload this zip on itch.io as an HTML game (Kind of project: HTML).');
-console.log('Tick "This file will be played in the browser".');
+console.log('index.html is at the zip root — serve it from any static web host.');

@@ -93,42 +93,19 @@ Regenerate them (German + English, menu + in-game) with:
 npm run shots      # -> screenshots/{menu,game}-{de,en}.png
 ```
 
-## 📦 Publish on itch.io
+## ▶ Play
 
-The game is plain static files, so it works as an itch.io **HTML5** game (no server
-of your own, Node is only a local dev convenience). Build the upload zip with:
+▶ **Play it now in your browser on [itch.io](https://jumavegames.itch.io/catapult-and-blade).**
 
-```bash
-npm run build      # -> dist/catapult-blade-v<version>-itch.zip
-```
-
-On itch.io: create a new project, *Kind of project* = **HTML**, upload the zip, tick
-**"This file will be played in the browser"**, and set a viewport (e.g. 1280×720)
-with fullscreen enabled. `index.html` is at the zip root, as itch expects.
-
-### Automated uploads with butler (optional)
-
-itch.io's CLI [butler](https://itchio.itch.io/butler) can push builds straight to
-your project — **including while it is still a draft / unpublished** (the page just
-has to exist once). Builds upload to a channel; you publish the page later.
-
-```bash
-# one-time: create the game page on itch.io (may stay a draft),
-# install butler, and get an API key at https://itch.io/user/settings/api-keys
-export BUTLER_API_KEY=xxxxx          # PowerShell: $env:BUTLER_API_KEY = "xxxxx"
-npm run publish -- yourname/catapult-blade
-```
-
-This stages the bundle and runs `butler push dist/itch yourname/catapult-blade:html5
---userversion <package.json version>`. The API key is only read from the environment —
-never hardcode it or paste it anywhere.
+Want to host it yourself? `npm run build` bundles the static files into a `.zip` in
+`dist/` — any static web host works (`index.html` is at the zip root).
 
 ## 🛠️ npm scripts
 
 | Command | What it does |
 | --- | --- |
 | `npm start` | Serve the game locally on <http://localhost:8000> |
-| `npm run build` | Build the itch.io upload zip into `dist/` |
+| `npm run build` | Bundle the static files into a `.zip` in `dist/` |
 | `npm run shots` | Generate DE/EN menu + in-game screenshots |
 | `npm test` | Run the i18n runtime test |
 
@@ -148,7 +125,7 @@ Catapult-Blade/
 │   ├── splash.js            # Intro splash screen
 │   └── game/main.js         # Game engine
 ├── prototype/               # The original single-file prototype (archive)
-├── tools/                   # Dev server, itch build, screenshots, migration, tests
+├── tools/                   # Dev server, zip build, screenshots, migration, tests
 ├── CHANGELOG.md
 ├── README.md
 ├── AGENTS.md                # Notes for AI/code agents
@@ -235,8 +212,7 @@ Dann <http://localhost:8000> öffnen.
 > das Spiel läuft komplett offline. Es muss nur über HTTP ausgeliefert werden (nicht
 > `file://`), da Browser ES-Module vom Dateisystem blockieren.
 
-> **itch.io:** Mit `npm run build` entsteht `dist/catapult-blade-v<version>-itch.zip` — als
-> HTML5-Spiel hochladen (Node ist nur lokaler Komfort, itch braucht keinen Server).
+> ▶ **Jetzt spielen:** im Browser auf [itch.io](https://jumavegames.itch.io/catapult-and-blade).
 
 ## 📜 Lizenz
 
